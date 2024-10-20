@@ -1,0 +1,591 @@
+@import url('https://fonts.cdnfonts.com/css/amazon-ember');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    font-family: 'Amazon Ember', sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(202, 198, 198, 0.575);
+}
+
+.header-box {
+    width: 100%;
+    display: flex;
+    position: sticky; 
+    top: 0;
+    z-index: 1;   
+    flex-direction: row;
+    padding: 0.5rem;
+    gap: 1rem;
+    /* z-index: 10; */
+    background-color: #0f1111;
+    color: white;
+}
+
+.logo-box {
+    width: 24%;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.logo-box img {
+    margin-top: 0.1rem;
+    width: 120px;
+    height: fit-content;
+    border: 1.5px solid rgba(255, 255, 255, 0);
+    border-radius: 2px;
+    padding: 0.3rem;
+}
+
+.logo-box img:hover {
+    border: 1.5px solid rgb(255, 255, 255);
+}
+
+.add-box {
+    padding: 0.3rem;
+    border: 1.5px solid rgba(255, 255, 255, 0);
+    border-radius: 2px;
+}
+
+.add-box:hover {
+    border: 1.5px solid rgb(255, 255, 255);
+}
+
+.add-box span {
+    color: rgb(180, 177, 177);
+    font-size: 0.8rem;
+    margin-left: 1.1rem;
+}
+
+.loc-box {
+    display: flex;
+    align-items: center;
+}
+
+.loc-box h4 {
+    margin-top: 0.1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.search-box {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.all-dropdown select {
+    background-color: #E6E6E6;
+    height: 40px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 2px solid rgba(236, 119, 46, 0);
+}
+
+.all-dropdown select:hover {
+    border: 2px solid rgba(236, 119, 46, 0.918);
+}
+
+.search-input {
+    width: 100%;
+}
+
+.search-input input {
+    padding-left: 0.6rem;
+    width: 100%;
+    height: 40px;
+    border: 2px solid rgba(236, 119, 46, 0);
+}
+
+.search-input input:hover {
+    border: 2px solid rgba(236, 119, 46, 0.918);
+}
+
+.search-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 35px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgb(255, 166, 0);
+    border: 2px solid rgba(236, 119, 46, 0);
+}
+
+.search-img:hover {
+    border: 2px solid rgba(236, 119, 46, 0.918);
+}
+.side-box {
+    width: 30%;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-box {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1.5px solid rgba(255, 255, 255, 0);
+    border-radius: 2px;
+}
+
+.lang-box:hover {
+    border: 1.5px solid rgb(255, 255, 255);
+}
+
+.lang-box img {
+    width: 20px;
+}
+
+.acc-box {
+    border: 1.5px solid rgba(255, 255, 255, 0);
+    border-radius: 2px;
+}
+
+.acc-box:hover {
+    border: 1.5px solid rgb(255, 255, 255);
+}
+
+.ret-box {
+    border: 1.5px solid rgba(255, 255, 255, 0);
+    border-radius: 2px;
+}
+
+.ret-box:hover {
+    border: 1.5px solid rgb(255, 255, 255);
+}
+
+.acc-box span, .ret-box span {
+    font-size: 0.85rem;
+}
+
+.acc-box h4, .ret-box h4, .cart-box h3 {
+    font-size: 0.9rem;
+}
+
+.cart-box {
+    display: flex;
+    gap: 0.4rem;
+    align-items: end;
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-radius: 2px;
+}
+
+.cart-box:hover {
+    border: 2px solid rgb(255, 255, 255);
+    padding-top: 0.6rem;
+}
+
+.cart-img {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.cart-img span {
+    position: absolute;
+    top: -40%;
+    left: 40%;
+    color: orange;
+}
+
+@media screen and (max-width: 1250px) {
+    .header-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-box, .side-box {
+        width: 100%;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .search-box {
+        width: 80%;
+    }
+
+    .search-img {
+        width: 71px;
+        height: 40px;
+    }
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 70px;
+    color: black;
+    border-radius: 5px;
+    /* border: 1px solid brown; */
+    background-color: white;
+    padding: 2rem;
+    left: 55%;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    top: -4.5%;
+    left: 80%;
+}
+
+.first-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.first-div button, .customised-signin button {
+    width: 90%;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(255, 217, 0);
+    font-size: 0.9rem;
+}
+
+.first-div span {
+    font-size: 0.9rem;
+}
+
+.first-div span a {
+    text-decoration: none;
+}
+
+.second-div {
+    display: flex;
+    flex-direction: row;
+    gap: 6rem;
+}
+
+.second-div li {
+    list-style: none;
+    margin-bottom: 0.4rem;
+}
+
+.second-div a {
+    text-decoration: none;
+    color: rgb(50, 49, 49);
+    margin-bottom: 0.4rem;
+}
+
+.second-div a:hover {
+    color: rgb(255, 183, 0);
+    text-decoration: underline 0.04rem;
+}
+
+@media screen and (min-width: 1265px) {
+    .acc-tooltip-container:hover .tooltip,
+    .acc-tooltip-container:hover .acc-box {
+        display: block;
+    }
+}
+
+.nav-bar {
+    display: flex;
+    gap: 1rem;
+    background-color: #232f3e;
+    padding: 0.2rem;
+    color: white;
+    align-items: center;
+}
+
+.nav-items {
+    display: flex;
+    gap: 1rem;
+    overflow: auto;
+}
+
+.nav-items li {
+    list-style: none;;
+}
+
+ion-icon {
+    font-size: 40px;
+}
+
+.main-bg {
+    width: 100%;
+    min-height: 400px;
+    /* position: absolute; */
+    background-image: url(images/bg-amazon.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.upper-cards-box {
+    display: grid;
+    padding: 1.5rem;
+    justify-content: center;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(291px, 291px));
+} 
+
+.uc {
+    display: flex;
+    /* border: 1px solid; */
+    gap: 1rem;
+    flex-direction: column;
+    padding: 1rem;
+    /* width: 300px; */
+    background-color: white;
+}
+
+.uc h1 {
+    font-size: 1.5rem;
+}
+
+.uc-img-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.7rem;
+    row-gap: 1.5rem;
+}
+
+.u-img {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+.u-img img {
+    width: 100%;
+    height: 100px;
+}
+
+.u-img span {
+    font-size: 0.8rem;
+    color: rgb(111, 98, 98);
+}
+
+.uc a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #007185;
+}
+
+.uc a:hover {
+    color: rgb(187, 58, 58);
+}
+
+.middle-cards-box {
+    display: grid;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.mc {
+    padding: 1rem;
+    background-color: white;
+}
+
+.head-box {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.head-box h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.head-box a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #007185;
+}
+
+.head-box a:hover {
+    color: rgb(187, 58, 58);
+    text-decoration: underline;
+}
+
+.mc-img {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(221px, 280px));
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: end;
+}
+
+.mc-img img {
+    width: 100%;
+}
+
+.end-cards-box {
+    display: grid;
+    padding: 1.5rem;
+    gap: 1rem;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(221px, 290px));
+}
+
+.ec {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.ec-img {
+    width: 100%;
+}
+
+.ec-img img {
+    width: 100%;
+}
+
+.price {
+    margin-top: 0.4rem;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.signin {
+    background-color: white;
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+.customised-signin {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 0 auto;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.customised-signin button {
+    width: 100%;
+}
+
+.customised-signin span {
+    font-size: 0.8rem;
+}
+
+.customised-signin span a {
+    text-decoration: none;
+    color: #007185;
+}
+
+.customised-signin span a:hover {
+    color: rgb(187, 58, 58);
+}
+
+.back-to-top {
+    width: 100%;
+    background-color: #37475a;
+}
+
+.back-to-top button {
+    padding: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    background-color: #37475a;
+    color: rgb(225, 224, 224);
+}
+
+.option-box {
+    display: grid;
+    padding: 2rem;
+    row-gap: 1.5rem;
+    justify-content: space-around;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+    background-color: #232f3e;
+    color: white;
+}
+
+.o-items ul li {
+    list-style: none;
+    margin-top: 0.8rem;
+    color: rgb(225, 224, 224);
+    font-weight: 400;
+}
+
+.footer-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #131a22;
+    color: white;
+}
+
+.footer-options {
+    display: grid;
+    padding: 2rem;
+    justify-content: space-around;
+    gap: 2.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 120px));
+}
+
+.f-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.f-items a {
+    color: rgb(214, 211, 211);
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.f-items a:hover {
+    text-decoration: underline;
+}
+
+.f-items a span {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.copyright-links {
+    display: flex;
+    gap: 1rem;    
+}
+
+.copyright-links a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: rgb(214, 211, 211);
+}
+
+.copyright-links a:hover {
+    text-decoration: underline;
+}
+
+.copyright-text {
+    font-size: 0.95rem;   
+    color: rgb(214, 211, 211);
+}
